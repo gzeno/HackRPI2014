@@ -1,0 +1,13 @@
+Nunchuck Joint Limitations:
+
+Zero Configuration
+------------------
+X: 128, Y: 137
+
+Limits of X:
+------------
+32 <= x <= 228
+
+Limits of Y:
+------------
+35 <= y <= 225  
