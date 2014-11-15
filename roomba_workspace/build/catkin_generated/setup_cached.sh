@@ -5,16 +5,8 @@
 # it emulates the modifications of the setup script without recurring computations
 
 # new environment variables
-export CATKIN_TEST_RESULTS_DIR="/home/bryant/HackRPI2014/roomba_workspace/build/test_results"
-export ROS_TEST_RESULTS_DIR="/home/bryant/HackRPI2014/roomba_workspace/build/test_results"
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/bryant/HackRPI2014/roomba_workspace/devel:$CMAKE_PREFIX_PATH"
-export CPATH="/home/bryant/HackRPI2014/roomba_workspace/devel/include:$CPATH"
-export LD_LIBRARY_PATH="/home/bryant/HackRPI2014/roomba_workspace/devel/lib:/home/bryant/HackRPI2014/roomba_workspace/devel/lib/x86_64-linux-gnu:/opt/ros/indigo/lib/x86_64-linux-gnu:/opt/ros/indigo/lib"
-export PATH="/home/bryant/HackRPI2014/roomba_workspace/devel/bin:$PATH"
-export PKG_CONFIG_PATH="/home/bryant/HackRPI2014/roomba_workspace/devel/lib/pkgconfig:/home/bryant/HackRPI2014/roomba_workspace/devel/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/pkgconfig"
+export LD_LIBRARY_PATH="/home/bryant/HackRPI2014/roomba_workspace/devel/lib/x86_64-linux-gnu:/opt/ros/indigo/lib/x86_64-linux-gnu:/home/bryant/HackRPI2014/roomba_workspace/devel/lib:/opt/ros/indigo/lib"
+export PKG_CONFIG_PATH="/home/bryant/HackRPI2014/roomba_workspace/devel/lib/x86_64-linux-gnu/pkgconfig:/opt/ros/indigo/lib/x86_64-linux-gnu/pkgconfig:/home/bryant/HackRPI2014/roomba_workspace/devel/lib/pkgconfig:/opt/ros/indigo/lib/pkgconfig"
 export PWD="/home/bryant/HackRPI2014/roomba_workspace/build"
-export PYTHONPATH="/home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/bryant/HackRPI2014/roomba_workspace/src:$ROS_PACKAGE_PATH"

@@ -1,0 +1,8 @@
+prefix=/home/bryant/HackRPI2014/roomba_workspace/devel
+
+Name: roomba_node
+Description: Description of roomba_node
+Version: 0.0.0
+Cflags: -I/home/bryant/HackRPI2014/roomba_workspace/devel/include
+Libs: -L/home/bryant/HackRPI2014/roomba_workspace/devel/lib 
+Requires: 

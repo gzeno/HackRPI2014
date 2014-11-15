@@ -1,0 +1,7 @@
+string command
+int64 argument1
+int64 argument2
+int64 argument3
+int64 argument4
+---
+int64 returnvalue
