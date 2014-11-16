@@ -265,6 +265,7 @@ roomba_node/all: roomba_node/CMakeFiles/roomba_node_generate_messages.dir/all
 .PHONY : roomba_node/all
 
 # Convenience name for "clean" pass in the directory.
+roomba_node/clean: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/clean
 roomba_node/clean: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/clean
 roomba_node/clean: roomba_node/CMakeFiles/roomba_node_gencpp.dir/clean
 roomba_node/clean: roomba_node/CMakeFiles/roomba_node_generate_messages.dir/clean
@@ -287,6 +288,37 @@ roomba_node/clean: roomba_node/CMakeFiles/std_msgs_generate_messages_py.dir/clea
 # Convenience name for "preinstall" pass in the directory.
 roomba_node/preinstall:
 .PHONY : roomba_node/preinstall
+
+#=============================================================================
+# Target rules for target roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir
+
+# All Build rule for target.
+roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/all:
+	$(MAKE) -f roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/build.make roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/depend
+	$(MAKE) -f roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/build.make roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 
+	@echo "Built target _roomba_node_generate_messages_check_deps_ArduinoMessage"
+.PHONY : roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/all
+
+# Build rule for subdir invocation for target.
+roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
+.PHONY : roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/rule
+
+# Convenience name for target.
+_roomba_node_generate_messages_check_deps_ArduinoMessage: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/rule
+.PHONY : _roomba_node_generate_messages_check_deps_ArduinoMessage
+
+# clean rule for target.
+roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/clean:
+	$(MAKE) -f roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/build.make roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/clean
+.PHONY : roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/clean
+
+# clean rule for target.
+clean: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/clean
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir
@@ -332,7 +364,7 @@ roomba_node/CMakeFiles/roomba_node_gencpp.dir/all: roomba_node/CMakeFiles/roomba
 
 # Build rule for subdir invocation for target.
 roomba_node/CMakeFiles/roomba_node_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/roomba_node_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
 .PHONY : roomba_node/CMakeFiles/roomba_node_gencpp.dir/rule
@@ -355,8 +387,8 @@ clean: roomba_node/CMakeFiles/roomba_node_gencpp.dir/clean
 
 # All Build rule for target.
 roomba_node/CMakeFiles/roomba_node_generate_messages.dir/all: roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/all
-roomba_node/CMakeFiles/roomba_node_generate_messages.dir/all: roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/all
 roomba_node/CMakeFiles/roomba_node_generate_messages.dir/all: roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/all
+roomba_node/CMakeFiles/roomba_node_generate_messages.dir/all: roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/all
 	$(MAKE) -f roomba_node/CMakeFiles/roomba_node_generate_messages.dir/build.make roomba_node/CMakeFiles/roomba_node_generate_messages.dir/depend
 	$(MAKE) -f roomba_node/CMakeFiles/roomba_node_generate_messages.dir/build.make roomba_node/CMakeFiles/roomba_node_generate_messages.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 
@@ -369,7 +401,7 @@ all: roomba_node/CMakeFiles/roomba_node_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 roomba_node/CMakeFiles/roomba_node_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/roomba_node_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
 .PHONY : roomba_node/CMakeFiles/roomba_node_generate_messages.dir/rule
@@ -391,17 +423,18 @@ clean: roomba_node/CMakeFiles/roomba_node_generate_messages.dir/clean
 # Target rules for target roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir
 
 # All Build rule for target.
-roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/all
+roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/all
 roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/all: roomba_node/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/all
 	$(MAKE) -f roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/build.make roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/depend
 	$(MAKE) -f roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/build.make roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles  3 4
 	@echo "Built target roomba_node_generate_messages_cpp"
 .PHONY : roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
 .PHONY : roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/rule
@@ -423,17 +456,18 @@ clean: roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/clean
 # Target rules for target roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir
 
 # All Build rule for target.
-roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/all
+roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/all
 roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/all: roomba_node/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/all
 	$(MAKE) -f roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/build.make roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/depend
 	$(MAKE) -f roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/build.make roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles  5 6
 	@echo "Built target roomba_node_generate_messages_lisp"
 .PHONY : roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
 .PHONY : roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/rule
@@ -455,17 +489,18 @@ clean: roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/clean
 # Target rules for target roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir
 
 # All Build rule for target.
-roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/all
+roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/all
 roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/all: roomba_node/CMakeFiles/std_msgs_generate_messages_py.dir/all
+roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/all: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/all
 	$(MAKE) -f roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/build.make roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/depend
 	$(MAKE) -f roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/build.make roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles  5 6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles  7 8 9
 	@echo "Built target roomba_node_generate_messages_py"
 .PHONY : roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
 .PHONY : roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/rule
@@ -496,7 +531,7 @@ roomba_node/CMakeFiles/roomba_node_genlisp.dir/all: roomba_node/CMakeFiles/roomb
 
 # Build rule for subdir invocation for target.
 roomba_node/CMakeFiles/roomba_node_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/roomba_node_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
 .PHONY : roomba_node/CMakeFiles/roomba_node_genlisp.dir/rule
@@ -527,7 +562,7 @@ roomba_node/CMakeFiles/roomba_node_genpy.dir/all: roomba_node/CMakeFiles/roomba_
 
 # Build rule for subdir invocation for target.
 roomba_node/CMakeFiles/roomba_node_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/roomba_node_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles 0
 .PHONY : roomba_node/CMakeFiles/roomba_node_genpy.dir/rule

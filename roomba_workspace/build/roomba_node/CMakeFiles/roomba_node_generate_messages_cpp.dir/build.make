@@ -49,6 +49,7 @@ CMAKE_BINARY_DIR = /home/bryant/HackRPI2014/roomba_workspace/build
 include roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/progress.make
 
 roomba_node/CMakeFiles/roomba_node_generate_messages_cpp: /home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/CreateMessage.h
+roomba_node/CMakeFiles/roomba_node_generate_messages_cpp: /home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/ArduinoMessage.h
 
 /home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/CreateMessage.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/CreateMessage.h: /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv
@@ -58,8 +59,17 @@ roomba_node/CMakeFiles/roomba_node_generate_messages_cpp: /home/bryant/HackRPI20
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from roomba_node/CreateMessage.srv"
 	cd /home/bryant/HackRPI2014/roomba_workspace/build/roomba_node && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p roomba_node -o /home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node -e /opt/ros/indigo/share/gencpp/cmake/..
 
+/home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/ArduinoMessage.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/ArduinoMessage.h: /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv
+/home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/ArduinoMessage.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+/home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/ArduinoMessage.h: /opt/ros/indigo/share/gencpp/cmake/../srv.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from roomba_node/ArduinoMessage.srv"
+	cd /home/bryant/HackRPI2014/roomba_workspace/build/roomba_node && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p roomba_node -o /home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node -e /opt/ros/indigo/share/gencpp/cmake/..
+
 roomba_node_generate_messages_cpp: roomba_node/CMakeFiles/roomba_node_generate_messages_cpp
 roomba_node_generate_messages_cpp: /home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/CreateMessage.h
+roomba_node_generate_messages_cpp: /home/bryant/HackRPI2014/roomba_workspace/devel/include/roomba_node/ArduinoMessage.h
 roomba_node_generate_messages_cpp: roomba_node/CMakeFiles/roomba_node_generate_messages_cpp.dir/build.make
 .PHONY : roomba_node_generate_messages_cpp
 

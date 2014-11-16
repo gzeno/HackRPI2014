@@ -49,6 +49,7 @@ CMAKE_BINARY_DIR = /home/bryant/HackRPI2014/roomba_workspace/build
 include roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/progress.make
 
 roomba_node/CMakeFiles/roomba_node_generate_messages_lisp: /home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv/CreateMessage.lisp
+roomba_node/CMakeFiles/roomba_node_generate_messages_lisp: /home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv/ArduinoMessage.lisp
 
 /home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv/CreateMessage.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv/CreateMessage.lisp: /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv
@@ -56,8 +57,15 @@ roomba_node/CMakeFiles/roomba_node_generate_messages_lisp: /home/bryant/HackRPI2
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from roomba_node/CreateMessage.srv"
 	cd /home/bryant/HackRPI2014/roomba_workspace/build/roomba_node && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p roomba_node -o /home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv
 
+/home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv/ArduinoMessage.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv/ArduinoMessage.lisp: /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from roomba_node/ArduinoMessage.srv"
+	cd /home/bryant/HackRPI2014/roomba_workspace/build/roomba_node && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p roomba_node -o /home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv
+
 roomba_node_generate_messages_lisp: roomba_node/CMakeFiles/roomba_node_generate_messages_lisp
 roomba_node_generate_messages_lisp: /home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv/CreateMessage.lisp
+roomba_node_generate_messages_lisp: /home/bryant/HackRPI2014/roomba_workspace/devel/share/common-lisp/ros/roomba_node/srv/ArduinoMessage.lisp
 roomba_node_generate_messages_lisp: roomba_node/CMakeFiles/roomba_node_generate_messages_lisp.dir/build.make
 .PHONY : roomba_node_generate_messages_lisp
 

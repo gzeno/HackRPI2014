@@ -153,6 +153,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/rule:
+	cd /home/bryant/HackRPI2014/roomba_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/rule
+.PHONY : roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/rule
+
+# Convenience name for target.
+_roomba_node_generate_messages_check_deps_ArduinoMessage: roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/rule
+.PHONY : _roomba_node_generate_messages_check_deps_ArduinoMessage
+
+# fast build rule for target.
+_roomba_node_generate_messages_check_deps_ArduinoMessage/fast:
+	cd /home/bryant/HackRPI2014/roomba_workspace/build && $(MAKE) -f roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/build.make roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/build
+.PHONY : _roomba_node_generate_messages_check_deps_ArduinoMessage/fast
+
+# Convenience name for target.
 roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/rule:
 	cd /home/bryant/HackRPI2014/roomba_workspace/build && $(MAKE) -f CMakeFiles/Makefile2 roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/rule
 .PHONY : roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/rule
@@ -396,6 +410,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... _roomba_node_generate_messages_check_deps_ArduinoMessage"
 	@echo "... _roomba_node_generate_messages_check_deps_CreateMessage"
 	@echo "... edit_cache"
 	@echo "... install"

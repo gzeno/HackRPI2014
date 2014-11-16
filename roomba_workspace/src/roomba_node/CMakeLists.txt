@@ -55,6 +55,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_service_files(
    FILES
    CreateMessage.srv
+   ArduinoMessage.srv
 )
 
 ## Generate actions in the 'action' folder

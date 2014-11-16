@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "roomba_node: 0 messages, 1 services")
+message(STATUS "roomba_node: 0 messages, 2 services")
 
 set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
@@ -20,6 +20,11 @@ add_custom_target(_roomba_node_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "roomba_node" "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv" ""
 )
 
+get_filename_component(_filename "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv" NAME_WE)
+add_custom_target(_roomba_node_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "roomba_node" "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv" ""
+)
+
 #
 #  langs = gencpp;genlisp;genpy
 #
@@ -30,6 +35,12 @@ add_custom_target(_roomba_node_generate_messages_check_deps_${_filename}
 ### Generating Services
 _generate_srv_cpp(roomba_node
   "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/roomba_node
+)
+_generate_srv_cpp(roomba_node
+  "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/roomba_node
@@ -49,6 +60,8 @@ add_dependencies(roomba_node_generate_messages roomba_node_generate_messages_cpp
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv" NAME_WE)
 add_dependencies(roomba_node_generate_messages_cpp _roomba_node_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv" NAME_WE)
+add_dependencies(roomba_node_generate_messages_cpp _roomba_node_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(roomba_node_gencpp)
@@ -63,6 +76,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS roomba_node_generate_messages_cpp)
 ### Generating Services
 _generate_srv_lisp(roomba_node
   "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/roomba_node
+)
+_generate_srv_lisp(roomba_node
+  "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/roomba_node
@@ -82,6 +101,8 @@ add_dependencies(roomba_node_generate_messages roomba_node_generate_messages_lis
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv" NAME_WE)
 add_dependencies(roomba_node_generate_messages_lisp _roomba_node_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv" NAME_WE)
+add_dependencies(roomba_node_generate_messages_lisp _roomba_node_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(roomba_node_genlisp)
@@ -100,6 +121,12 @@ _generate_srv_py(roomba_node
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/roomba_node
 )
+_generate_srv_py(roomba_node
+  "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/roomba_node
+)
 
 ### Generating Module File
 _generate_module_py(roomba_node
@@ -114,6 +141,8 @@ add_dependencies(roomba_node_generate_messages roomba_node_generate_messages_py)
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv" NAME_WE)
+add_dependencies(roomba_node_generate_messages_py _roomba_node_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv" NAME_WE)
 add_dependencies(roomba_node_generate_messages_py _roomba_node_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

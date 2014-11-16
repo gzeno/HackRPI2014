@@ -179,6 +179,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/tests.dir/DependInfo.cmake"
   "gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "gtest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/DependInfo.cmake"
   "roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_CreateMessage.dir/DependInfo.cmake"
   "roomba_node/CMakeFiles/roomba_node_gencpp.dir/DependInfo.cmake"
   "roomba_node/CMakeFiles/roomba_node_generate_messages.dir/DependInfo.cmake"

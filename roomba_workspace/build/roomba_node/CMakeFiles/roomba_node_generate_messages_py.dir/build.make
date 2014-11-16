@@ -49,6 +49,7 @@ CMAKE_BINARY_DIR = /home/bryant/HackRPI2014/roomba_workspace/build
 include roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/progress.make
 
 roomba_node/CMakeFiles/roomba_node_generate_messages_py: /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_CreateMessage.py
+roomba_node/CMakeFiles/roomba_node_generate_messages_py: /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_ArduinoMessage.py
 roomba_node/CMakeFiles/roomba_node_generate_messages_py: /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/__init__.py
 
 /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_CreateMessage.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py
@@ -57,14 +58,22 @@ roomba_node/CMakeFiles/roomba_node_generate_messages_py: /home/bryant/HackRPI201
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python code from SRV roomba_node/CreateMessage"
 	cd /home/bryant/HackRPI2014/roomba_workspace/build/roomba_node && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/CreateMessage.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p roomba_node -o /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv
 
+/home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_ArduinoMessage.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py
+/home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_ArduinoMessage.py: /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python code from SRV roomba_node/ArduinoMessage"
+	cd /home/bryant/HackRPI2014/roomba_workspace/build/roomba_node && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/bryant/HackRPI2014/roomba_workspace/src/roomba_node/srv/ArduinoMessage.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p roomba_node -o /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv
+
 /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/__init__.py: /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_CreateMessage.py
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles $(CMAKE_PROGRESS_2)
+/home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/__init__.py: /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_ArduinoMessage.py
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bryant/HackRPI2014/roomba_workspace/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python srv __init__.py for roomba_node"
 	cd /home/bryant/HackRPI2014/roomba_workspace/build/roomba_node && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv --initpy
 
 roomba_node_generate_messages_py: roomba_node/CMakeFiles/roomba_node_generate_messages_py
 roomba_node_generate_messages_py: /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_CreateMessage.py
+roomba_node_generate_messages_py: /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/_ArduinoMessage.py
 roomba_node_generate_messages_py: /home/bryant/HackRPI2014/roomba_workspace/devel/lib/python2.7/dist-packages/roomba_node/srv/__init__.py
 roomba_node_generate_messages_py: roomba_node/CMakeFiles/roomba_node_generate_messages_py.dir/build.make
 .PHONY : roomba_node_generate_messages_py

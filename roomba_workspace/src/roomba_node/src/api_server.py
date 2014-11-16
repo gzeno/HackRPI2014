@@ -8,7 +8,7 @@ Bryant Pong & Raymond Tse
 Hack RPI 2014
 11/15/14 
 
-Last Updated: 11/15/14 - 11:07 PM   
+Last Updated: 11/16/14 - 1:02 AM   
 '''
 
 # Python Libaries:
@@ -96,7 +96,7 @@ def main():
 				if data:
 					print('Sending data back to client')
 					connection.sendall(data)
-					create_api_client(0, 0)
+					#create_api_client(0, 0)
 
 					# Issue a call to the Create API:  
 

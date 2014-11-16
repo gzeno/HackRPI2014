@@ -231,6 +231,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named _roomba_node_generate_messages_check_deps_ArduinoMessage
+
+# Build rule for target.
+_roomba_node_generate_messages_check_deps_ArduinoMessage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _roomba_node_generate_messages_check_deps_ArduinoMessage
+.PHONY : _roomba_node_generate_messages_check_deps_ArduinoMessage
+
+# fast build rule for target.
+_roomba_node_generate_messages_check_deps_ArduinoMessage/fast:
+	$(MAKE) -f roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/build.make roomba_node/CMakeFiles/_roomba_node_generate_messages_check_deps_ArduinoMessage.dir/build
+.PHONY : _roomba_node_generate_messages_check_deps_ArduinoMessage/fast
+
+#=============================================================================
 # Target rules for targets named _roomba_node_generate_messages_check_deps_CreateMessage
 
 # Build rule for target.
@@ -470,6 +483,7 @@ help:
 	@echo "... tests"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... _roomba_node_generate_messages_check_deps_ArduinoMessage"
 	@echo "... _roomba_node_generate_messages_check_deps_CreateMessage"
 	@echo "... roomba_node_gencpp"
 	@echo "... roomba_node_generate_messages"
