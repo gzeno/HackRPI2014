@@ -21,6 +21,7 @@ socket.on('Error', function(data) {
 });
 
 $(document).ready(function() {
+	$('#scale').val(1);
 	$('#ch').val(400);
 	$('#cw').val(600);
 	$('#sendBut').on('click',sendToServer);
@@ -35,7 +36,19 @@ $(document).ready(function() {
 	});
 	$('#save').on('click', function(){
 		var dataurl = document.getElementById('drawingCanvas').toDataURL();
-		window.open(dataurl, "Download Image", width=$('#cw').val(), height=$('#ch').val());
+		window.open(dataurl, "Download Image", width=$('#drawingCanvas').width, height=$('#drawingCanvas').height);
+	});
+	$('#getLink').on('click',function(){
+		var dataurl = document.getElementById('drawingCanvas').toDataURL();
+		$('#dataUrl').val(dataurl);
+	});
+	$('#load').on('click', function(){
+		context = document.getElementById('drawingCanvas').getContext("2d");
+		var img = new Image;
+		img.onload = function(){
+			context.drawImage(this,0,0);
+		}
+		img.src = $('#dataUrl').val();
 	});
 	init();
 });
