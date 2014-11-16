@@ -6,14 +6,33 @@
  * Hack RPI 2014
  * 11/16/14
  *
- * Last Updated: 11/16/14 - 12:48 PM
+ * Last Updated: 11/16/14 - 12:08 AM
  */
 #include <Servo.h>
 
+Servo pen;
+
+// Value of the next command:
+int incoming = 0;
+
+void penup() {
+  pen.write(
+} // End function penup()
+
+void pendown() {
+  
+} // End function pendown()
+
 void setup() {
  Serial.begin(9600); 
+ 
+ pen.attach(9);
+ 
+ Serial.println("Setup Complete!");
 }
 
 void loop() {
-  
+  if(Serial.available() > 0) {
+    incoming = Serial.read(1);
+  }
 }

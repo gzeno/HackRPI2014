@@ -8,7 +8,7 @@ Bryant Pong & Raymond Tse
 Hack RPI 2014
 11/15/14 
 
-Last Updated: 11/16/14 - 1:02 AM   
+Last Updated: 11/16/14 - 11:03 AM   
 '''
 
 # Python Libaries:
@@ -68,18 +68,49 @@ def create_api_client(command, arg2):
 		create_api = rospy.ServiceProxy('create_message', CreateMessage)
 
 		# Parse the command:
-					  
-
+		if command == 'forward':
+			respl = create_api('forward', float(arg2  * 0.4 ))
+		elif command == 'turn':
+			respl = create_api('turn', float(arg2 * 0.4))
+		elif command == 'up':
+			pass
+		elif command == 'down':
+			pass	 	  
+		
 		#respl = create_api('turn', -40, 0, 0, 0)
 		return 1
 	except rospy.ServiceException, e:
 		print("Service call failed: %s " % e)
+
+# The scaling factor   
+# scalingFactor = 0
+
+# Flag to check if we set the scaling factor
+# setScalingFactor = False
+
+def isfloat(value):
+	try:
+		float(value)
+		return True
+	except ValueError:
+		return False
 
 # Main server:
 def main():
 	print('Starting API Server on %s Port %s' % server_address)
 	sock.bind(server_address)
 	sock.listen(1)
+
+	scalingFactor = 0
+
+	timeToProcessString = False
+	overallData = []
+
+	previousX = 0.0
+	previousY = 0.0
+
+	previousVecX = 0.0
+	previousVecY = -1.0
 
 	while True:
 
@@ -90,12 +121,26 @@ def main():
 			print('Image data from', client_address)
 
 			while True:
+
+				# Set the Scaling Factor if we haven't done so:
+				
 				data = connection.recv(9001)
 				print('Received "%s"' % data)
 					
 				if data:
-					print('Sending data back to client')
-					connection.sendall(data)
+
+					print('Appending data to overallData')
+
+					overallData += data
+
+					#print('Now setting scaling factor to: ' + str(data[0]))
+					#scalingFactor = int(data[0])
+
+					#data = data[1:]
+					#print('Remaining data is: %s' % data)
+				
+					#print('Sending data back to client')
+					#connection.sendall(data)
 					#create_api_client(0, 0)
 
 					# Issue a call to the Create API:  
@@ -106,6 +151,59 @@ def main():
 				else:
 					print('No more data from', client_address)
 					break
+
+			print('Now processing commands: ' + str(overallData))
+			niceData = ''.join(overallData)
+			print('niceData = ' + str(niceData))
+
+			# Split the data into a list without the spaces:
+			niceDataList = niceData.split(' ')  
+			print('niceDataList: ' + str(niceDataList))
+
+			# Set the scaling factor:
+			scalingFactor = int(niceDataList[0])
+			print('scalingFactor is: ' + str(scalingFactor))
+
+			# Get the remaining data:
+			remainingData = niceDataList[1:]
+			print('remainingData is ' + str(remainingData))
+
+			skipNext = False
+
+			# Now process the rest of the commands:
+			for i in range(0, len(remainingData)):
+				print('Debug only: nextCommand is: ' + str(remainingData[i]))	
+		
+				if isfloat(remainingData[i]) and skipNext == False:
+					print('We got an X/Y Pair!')
+					nextX = float(remainingData[i])
+					nextY = float(remainingData[i+1])
+
+					# We first need to spin the robot in place, then turn:	
+					nextVecX = nextX - previousX
+					nextVecY = nextY - previousY
+
+					angleToTurn = subproblem0(previousVecX, previousVecY, nextVecX, nextVecY)
+					create_api_client('turn', int(angleToTurn))
+
+					# Now move that distance: 
+					distanceToMove = math.sqrt( (nextX - previousX) ** 2 + (nextY - previousY) ** 2) 
+					create_api_client('forward', int(distanceToMove * 10))
+				
+					print('The X/Y pair is: ' + str(nextX) + ',' + str(nextY))
+
+					previousVecX = nextVecX
+					previousVecY = nextVecY
+					previousX = nextX
+					previousY = nextY
+
+					skipNext = True
+				elif isfloat(remainingData[i]) and skipNext == True:
+					skipNext = False
+					continue
+
+					 
+			
 		finally:
 			connection.close()
 

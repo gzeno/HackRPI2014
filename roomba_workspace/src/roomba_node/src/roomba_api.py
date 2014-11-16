@@ -32,7 +32,7 @@ def sendBytes(bytesToWrite):
   
 # This is the API Handler for a Roomba Command:
 def handle_api_request(req):
-	print("Now executing an API request with parameters: %s %s %s %s %s]" % (req.command, req.argument1))
+	print("Now executing an API request with parameters: %s %s]" % (req.command, req.argument1))
 
 	# Process a forward command.  The forward command has 1 argument: The
 	# distance to travel (in cm).
