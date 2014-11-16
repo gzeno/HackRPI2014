@@ -6,7 +6,6 @@ var context;
 var scale = 1;
 var metric = 0;
 //final pix2cm = 0.026458333;
-
 var url = '129.161.52.43';
 var socket = io.connect('http://localhost:8080');
 
@@ -24,24 +23,19 @@ socket.on('Error', function(data) {
 $(document).ready(function() {
 	$('#ch').val(400);
 	$('#cw').val(600);
-	/*
-	$('#metric').on('change',function(){
-		metric = (metric + 1) % 2;
-		if (metric == 1)
-		
-	});*/
 	$('#sendBut').on('click',sendToServer);
 	$('#clear').on('click',clear);
 	$('#ch').on('change',function() {
 		if (metric == 0) {
-			$('#drawingCanvas').css("width",$('#ch').val());
+			$('#drawingCanvas').css("height",$('#ch').val());
 		}
-		/*else {
-			$('#drawingCanvas').css("width",$('#ch').val()/0.02645833);
-		}*/
 	});
 	$('#cw').on('change',function() {
-		$('#drawingCanvas').css("height",$('#cw').val());
+		$('#drawingCanvas').css("width",$('#cw').val());
+	});
+	$('#save').on('click', function(){
+		var dataurl = document.getElementById('drawingCanvas').toDataURL();
+		window.open(dataurl, "Download Image", width=$('#cw').val(), height=$('#ch').val());
 	});
 	init();
 });
