@@ -1,36 +1,56 @@
 <html>
 	<head>
-		<title>Draw App</title>
+		<title>RoboAngelo</title>
 		<link rel="stylesheet" href="style.css">
 		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
 		<script src="socket.js"></script>
 	</head>
 	<body>
-		<h1>RoboAngelo</h1>
-		<h3> Please use a browser that supports HTML5 canvas (Not IE) </h3>
+		<div id="container">
+		<div id="header">
+			<h1>RoboAngelo</h1>
+		</div>
+		<br>
 		<div id="canvasID">
 			<span>
 				<label>Canvas Height: </label>
 				<input id="ch" type="number">
 				<label>Canvas Width: </label>
 				<input id="cw" type="number">
+				<button id="clear" type="button">Clear Image</button>
 			</span>
 			<br><br>
-			<canvas id="drawingCanvas"></canvas>
-			<br><br>
 		</div>
+		<canvas id="drawingCanvas" height="400" width="600"></canvas>
+		<br><br>
+		<div id='saveload'>
+			<button id="save" type="button">Save Image</button>
+			<br><center>(Right-click the image that pops up to save into your computer)</center>
+			<br><center>
+			<button id="getLink" type="button">Get special link (to load image on canvas anytime)</button>
+			<button id="load" type="button">Load link to canvas</button>
+			<br><br>
+			<label>Url:</label>
+			<input id="dataUrl" type="text">
+			</center>
+		</div>
+		<br>
 		<div id="drawInstructions">
 			<label>Scale of Drawing: </label>
-			<input id="scale" type="number">
-			<br>
+			<input id="scale" type="number" min='1' max='10'/>
+			<br><br>
 			<label>IP Address:</label>
 			<input id="ip" type="text">
-			<br>
+			<br><br>
 			<label>Port: </label>
 			<input id="host" type="text">
-			<br>
+			<br><br>
 			<button id="sendBut" type="button">Send to bot</button>
+		</div>
+		</div>
+		<div id="footer">
+			<h5>Project created for HackRPI 2014 by Raymond Tse, Bryant Pong</h5>
 		</div>
 	</body>
 </html>

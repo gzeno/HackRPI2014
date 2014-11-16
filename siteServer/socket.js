@@ -1,28 +1,24 @@
 // Javascript for io socket
 var datastream = [];
-var coords = [];
 var mouseDown = false;
 var lastx, lasty;
 var context;
 var scale = 1;
+var metric = 0;
 //final pix2cm = 0.026458333;
-var cwidth;
-var cheight;
 var url = '129.161.52.43';
 var socket = io.connect('http://localhost:8080');
 
 
-socket.on("connection", function(){
-	socket.emit('object',{data: "hello world"});
-	socket.on("object",function(data){
-		console.log(data);
-	});
-});
-
 // Socket functions
 socket.on('ready', function(data) {
 	console.log("Server is ready. Sending data.");
+	console.log(datastream);
 	socket.emit('picData',{data: datastream});
+	// Remove the host/ip/port from
+	datastream.pop();
+	datastream.pop();
+	datastream.pop();
 });
 
 socket.on('Error', function(data) {
@@ -30,7 +26,35 @@ socket.on('Error', function(data) {
 });
 
 $(document).ready(function() {
+	$('#scale').val(1);
+	$('#ch').val(400);
+	$('#cw').val(600);
 	$('#sendBut').on('click',sendToServer);
+	$('#clear').on('click',clear);
+	$('#ch').on('change',function() {
+		if (metric == 0) {
+			$('#drawingCanvas').css("height",$('#ch').val());
+		}
+	});
+	$('#cw').on('change',function() {
+		$('#drawingCanvas').css("width",$('#cw').val());
+	});
+	$('#save').on('click', function(){
+		var dataurl = document.getElementById('drawingCanvas').toDataURL();
+		window.open(dataurl, "Download Image", width=$('#drawingCanvas').width, height=$('#drawingCanvas').height);
+	});
+	$('#getLink').on('click',function(){
+		var dataurl = document.getElementById('drawingCanvas').toDataURL();
+		$('#dataUrl').val(dataurl);
+	});
+	$('#load').on('click', function(){
+		context = document.getElementById('drawingCanvas').getContext("2d");
+		var img = new Image;
+		img.onload = function(){
+			context.drawImage(this,0,0);
+		}
+		img.src = $('#dataUrl').val();
+	});
 	init();
 });
 
@@ -45,17 +69,7 @@ function sendToServer(e) {
 	h = $('#host').val();
 	if (h != '') { host = h;}
 	datastream[datastream.length] = host;
-	//console.log("Making sure server is ready");
 	socket.emit('ready', {data: 'ready' });
-	/*
-	w = new WebSocket('ws://'+url);
-	w.onopen = function(){
-		w.send('I am ladygaga!');
-	}
-	w.onmessage = function(e){
-		console.log(e.data.toString());
-	}
-	*/
 }
 
 function init(){
@@ -66,18 +80,16 @@ function init(){
 		x = e.pageX - $(this).offset().left;
 		y = e.pageY - $(this).offset().top;
 		draw(x, y, false);
-		datastream[datastream.length] = ""+x+" "+y;
+		datastream[datastream.length] = x+" "+y;
 		datastream[datastream.length] = 'd';
 	});
 
 	$('#drawingCanvas').mousemove(function (e) {
 		if (mouseDown){
-			//x,y = getMouse(e,$('drawingCanvas'));
-			//draw(x,y,true);
 			x = e.pageX - $(this).offset().left;
 			y = e.pageY - $(this).offset().top;
 			draw(x,y, true);
-			datastream[datastream.length] = [x,y];
+			datastream[datastream.length] = x+" "+y;
 		}
 	});
 
@@ -105,9 +117,6 @@ function getMouse(a, canvas) {
 		} while ((e = e.offsetParent));
 	}
 
-	//offsetX += stylePaddingLeft + styleBorderLeft + htmlLeft;
-	//offsetY += stylePaddingTop + styleBorderTop + htmlTop;
-
 	mx = a.pageX - offsetX;
 	my = a.pageY - offsetY;
 
@@ -131,4 +140,5 @@ function draw(x, y, down) {
 function clear() {
 	context.setTransform(1,0,0,1,0,0);
 	context.clearRect(0,0,context.canvas.width, context.canvas.height);
+	datastream = [];
 }
