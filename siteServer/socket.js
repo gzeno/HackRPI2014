@@ -13,7 +13,12 @@ var socket = io.connect('http://localhost:8080');
 // Socket functions
 socket.on('ready', function(data) {
 	console.log("Server is ready. Sending data.");
+	console.log(datastream);
 	socket.emit('picData',{data: datastream});
+	// Remove the host/ip/port from
+	datastream.pop();
+	datastream.pop();
+	datastream.pop();
 });
 
 socket.on('Error', function(data) {
@@ -75,7 +80,7 @@ function init(){
 		x = e.pageX - $(this).offset().left;
 		y = e.pageY - $(this).offset().top;
 		draw(x, y, false);
-		datastream[datastream.length] = ""+x+" "+y;
+		datastream[datastream.length] = x+" "+y;
 		datastream[datastream.length] = 'd';
 	});
 
@@ -84,7 +89,7 @@ function init(){
 			x = e.pageX - $(this).offset().left;
 			y = e.pageY - $(this).offset().top;
 			draw(x,y, true);
-			datastream[datastream.length] = [x,y];
+			datastream[datastream.length] = x+" "+y;
 		}
 	});
 
