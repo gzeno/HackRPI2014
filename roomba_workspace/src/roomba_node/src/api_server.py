@@ -8,7 +8,7 @@ Bryant Pong & Raymond Tse
 Hack RPI 2014
 11/15/14 
 
-Last Updated: 11/15/14 - 10:10 PM   
+Last Updated: 11/15/14 - 11:07 PM   
 '''
 
 # Python Libaries:
@@ -16,6 +16,7 @@ import socket
 import sys
 
 import numpy as np
+import math
 
 # ROS Libraries:
 from roomba_node.srv import *  
@@ -27,20 +28,49 @@ import rospy
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind, Listen, Accept:
-server_address = ('129.161.52.43', 9001)
+server_address = ('129.161.52.43', 9002)
 
 # Inverse Kinematics Subproblem 0.
 # Find the angle between two vectors.     
+# 
+#
+#     (x2, y2)-------------------->(x3, y3)
+#        |
+#        |
+#        |
+#     (x1, y1)
+#
+# vec1X = x2 - x1
+# vec2Y = y2 - y1
+#
+# vec2X = x3 - x2
+# vec2Y = y3 - y2 
 def subproblem0(vec1X, vec1Y, vec2X, vec2Y):
 
-	# Create two numpy 
-	pass	
+	# Create two numpy vectors from the parameters:
+	x = np.array( ([vec1X, vec1Y]), dtype=float)
+	y = np.array( ([vec2X, vec2Y]), dtype=float)
 
-def create_api_client(arg1, arg2, arg3, arg4, arg5):
+	theta = 2 * math.atan2(np.linalg.norm(x - y), np.linalg.norm(x + y))
+	# theta = math.pi - theta
+	theta *= 180 / math.pi 
+	
+	# Determine the sign of theta:
+	if np.cross(x, y) < 0:
+		theta *= -1.0
+
+	return theta
+		
+
+def create_api_client(command, arg2):
 	rospy.wait_for_service('create_message')
 	try:
 		create_api = rospy.ServiceProxy('create_message', CreateMessage)
-		respl = create_api('turn', -40, 0, 0, 0)
+
+		# Parse the command:
+					  
+
+		#respl = create_api('turn', -40, 0, 0, 0)
 		return 1
 	except rospy.ServiceException, e:
 		print("Service call failed: %s " % e)
@@ -60,13 +90,13 @@ def main():
 			print('Image data from', client_address)
 
 			while True:
-				data = connection.recv(16)
+				data = connection.recv(9001)
 				print('Received "%s"' % data)
 					
 				if data:
 					print('Sending data back to client')
 					connection.sendall(data)
-					create_api_client(0, 0, 0, 0, 0)
+					create_api_client(0, 0)
 
 					# Issue a call to the Create API:  
 

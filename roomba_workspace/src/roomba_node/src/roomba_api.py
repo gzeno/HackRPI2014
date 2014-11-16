@@ -7,7 +7,7 @@ Bryant Pong & Raymond Tse
 Hack RPI 2014
 11/15/14
 
-Last Updated: 11/15/14 - 9:39 PM      
+Last Updated: 11/15/14 - 11:06 PM      
 '''
 
 # ROS Libraries:
@@ -22,10 +22,6 @@ import serial
 # The serial port to talk to the Create:
 serialPort = serial.Serial('/dev/ttyUSB0', 57600)
 
-# This function upgrades hex to handle negative numbers:
-def tohex(val):
-	return hex((val + (1 << 16)) % (1 << 16))
-
 '''
 This function takes an array of ints to write and sends them in the form of
 a byte array:
@@ -36,7 +32,7 @@ def sendBytes(bytesToWrite):
   
 # This is the API Handler for a Roomba Command:
 def handle_api_request(req):
-	print("Now executing an API request with parameters: %s %s %s %s %s]" % (req.command, req.argument1, req.argument2, req.argument3, req.argument4))
+	print("Now executing an API request with parameters: %s %s %s %s %s]" % (req.command, req.argument1))
 
 	# Process a forward command.  The forward command has 1 argument: The
 	# distance to travel (in cm).
@@ -73,7 +69,6 @@ def handle_api_request(req):
 			high, low = divmod(int(degreesToTurn), 0x100)
 			sendBytes([157, high, low])
 			sendBytes([137, 0, 0, 0, 0])
-
 
 	return 4   
 

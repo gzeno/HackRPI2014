@@ -3,12 +3,6 @@
           COMMAND
           ARGUMENT1-VAL
           ARGUMENT1
-          ARGUMENT2-VAL
-          ARGUMENT2
-          ARGUMENT3-VAL
-          ARGUMENT3
-          ARGUMENT4-VAL
-          ARGUMENT4
           RETURNVALUE-VAL
           RETURNVALUE
 ))

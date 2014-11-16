@@ -58,17 +58,11 @@ struct CreateMessageRequest_
 
   CreateMessageRequest_()
     : command()
-    , argument1(0.0)
-    , argument2(0.0)
-    , argument3(0.0)
-    , argument4(0.0)  {
+    , argument1(0.0)  {
     }
   CreateMessageRequest_(const ContainerAllocator& _alloc)
     : command(_alloc)
-    , argument1(0.0)
-    , argument2(0.0)
-    , argument3(0.0)
-    , argument4(0.0)  {
+    , argument1(0.0)  {
     }
 
 
@@ -78,15 +72,6 @@ struct CreateMessageRequest_
 
    typedef double _argument1_type;
   _argument1_type argument1;
-
-   typedef double _argument2_type;
-  _argument2_type argument2;
-
-   typedef double _argument3_type;
-  _argument3_type argument3;
-
-   typedef double _argument4_type;
-  _argument4_type argument4;
 
 
 
@@ -165,12 +150,12 @@ struct MD5Sum< ::roomba_node::CreateMessageRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "e1f96dd5b54236744db9b8d26e18041d";
+    return "743e297cf7c6b4dc0c3664afbc57cdd2";
   }
 
   static const char* value(const ::roomba_node::CreateMessageRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xe1f96dd5b5423674ULL;
-  static const uint64_t static_value2 = 0x4db9b8d26e18041dULL;
+  static const uint64_t static_value1 = 0x743e297cf7c6b4dcULL;
+  static const uint64_t static_value2 = 0x0c3664afbc57cdd2ULL;
 };
 
 template<class ContainerAllocator>
@@ -191,9 +176,6 @@ struct Definition< ::roomba_node::CreateMessageRequest_<ContainerAllocator> >
   {
     return "string command\n\
 float64 argument1\n\
-float64 argument2\n\
-float64 argument3\n\
-float64 argument4\n\
 ";
   }
 
@@ -214,9 +196,6 @@ namespace serialization
     {
       stream.next(m.command);
       stream.next(m.argument1);
-      stream.next(m.argument2);
-      stream.next(m.argument3);
-      stream.next(m.argument4);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER;
@@ -239,12 +218,6 @@ struct Printer< ::roomba_node::CreateMessageRequest_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.command);
     s << indent << "argument1: ";
     Printer<double>::stream(s, indent + "  ", v.argument1);
-    s << indent << "argument2: ";
-    Printer<double>::stream(s, indent + "  ", v.argument2);
-    s << indent << "argument3: ";
-    Printer<double>::stream(s, indent + "  ", v.argument3);
-    s << indent << "argument4: ";
-    Printer<double>::stream(s, indent + "  ", v.argument4);
   }
 };
 

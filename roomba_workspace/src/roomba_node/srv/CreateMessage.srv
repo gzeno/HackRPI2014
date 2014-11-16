@@ -1,7 +1,4 @@
 string command
 float64 argument1
-float64 argument2
-float64 argument3
-float64 argument4
 ---
 int64 returnvalue

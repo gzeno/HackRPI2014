@@ -73,7 +73,7 @@ template<>
 struct MD5Sum< ::roomba_node::CreateMessage > {
   static const char* value()
   {
-    return "88917c848e1bff8f91d4008c0ad38390";
+    return "8b3e68a0a5fa14bfae984203e5adfb4f";
   }
 
   static const char* value(const ::roomba_node::CreateMessage&) { return value(); }
