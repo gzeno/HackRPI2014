@@ -1,0 +1,5 @@
+<launch>	
+	<node pkg="roomba_node" name="apiserver" type="api_server.py"></node>
+	<node pkg="roomba_node" name="roombaapi" type="roomba_api.py"></node>
+
+</launch>
