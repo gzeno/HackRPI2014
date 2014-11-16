@@ -1,23 +1,15 @@
 // Javascript for io socket
 var datastream = [];
-var coords = [];
 var mouseDown = false;
 var lastx, lasty;
 var context;
 var scale = 1;
+var metric = 0;
 //final pix2cm = 0.026458333;
-var cwidth;
-var cheight;
+
 var url = '129.161.52.43';
 var socket = io.connect('http://localhost:8080');
 
-
-socket.on("connection", function(){
-	socket.emit('object',{data: "hello world"});
-	socket.on("object",function(data){
-		console.log(data);
-	});
-});
 
 // Socket functions
 socket.on('ready', function(data) {
@@ -30,7 +22,27 @@ socket.on('Error', function(data) {
 });
 
 $(document).ready(function() {
+	$('#ch').val(400);
+	$('#cw').val(600);
+	/*
+	$('#metric').on('change',function(){
+		metric = (metric + 1) % 2;
+		if (metric == 1)
+		
+	});*/
 	$('#sendBut').on('click',sendToServer);
+	$('#clear').on('click',clear);
+	$('#ch').on('change',function() {
+		if (metric == 0) {
+			$('#drawingCanvas').css("width",$('#ch').val());
+		}
+		/*else {
+			$('#drawingCanvas').css("width",$('#ch').val()/0.02645833);
+		}*/
+	});
+	$('#cw').on('change',function() {
+		$('#drawingCanvas').css("height",$('#cw').val());
+	});
 	init();
 });
 
@@ -45,17 +57,7 @@ function sendToServer(e) {
 	h = $('#host').val();
 	if (h != '') { host = h;}
 	datastream[datastream.length] = host;
-	//console.log("Making sure server is ready");
 	socket.emit('ready', {data: 'ready' });
-	/*
-	w = new WebSocket('ws://'+url);
-	w.onopen = function(){
-		w.send('I am ladygaga!');
-	}
-	w.onmessage = function(e){
-		console.log(e.data.toString());
-	}
-	*/
 }
 
 function init(){
@@ -72,8 +74,6 @@ function init(){
 
 	$('#drawingCanvas').mousemove(function (e) {
 		if (mouseDown){
-			//x,y = getMouse(e,$('drawingCanvas'));
-			//draw(x,y,true);
 			x = e.pageX - $(this).offset().left;
 			y = e.pageY - $(this).offset().top;
 			draw(x,y, true);
@@ -105,9 +105,6 @@ function getMouse(a, canvas) {
 		} while ((e = e.offsetParent));
 	}
 
-	//offsetX += stylePaddingLeft + styleBorderLeft + htmlLeft;
-	//offsetY += stylePaddingTop + styleBorderTop + htmlTop;
-
 	mx = a.pageX - offsetX;
 	my = a.pageY - offsetY;
 
@@ -131,4 +128,5 @@ function draw(x, y, down) {
 function clear() {
 	context.setTransform(1,0,0,1,0,0);
 	context.clearRect(0,0,context.canvas.width, context.canvas.height);
+	datastream = [];
 }

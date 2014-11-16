@@ -5,13 +5,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var net = require('net')
 
-//app.use(express.static(path.join(__dirname)))
 app.use("/", express.static(__dirname));
-/*
-app.get('/', function(req, res) {
-	res.sendFile(__dirname + 'public/index.html')
-});
-*/
 server.listen(8080);
 
 // Socket.io events
