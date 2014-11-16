@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Draw App</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="socket.js"></script>
+	</head>
+	<body>
+		<h1>RoboAngelo</h1>
+		<h3> Please use a browser that supports HTML5 canvas (Not IE) </h3>
+		<div id="canvasID">
+			<span>
+				<label>Canvas Height: </label>
+				<input id="ch" type="number">
+				<label>Canvas Width: </label>
+				<input id="cw" type="number">
+			</span>
+			<br><br>
+			<canvas id="drawingCanvas"></canvas>
+			<br><br>
+		</div>
+		<div id="drawInstructions">
+			<label>Scale of Drawing: </label>
+			<input id="scale" type="number">
+			<br>
+			<label>IP Address:</label>
+			<input id="ip" type="text">
+			<br>
+			<label>Port: </label>
+			<input id="host" type="text">
+			<br>
+			<button id="sendBut" type="button">Send to bot</button>
+		</div>
+	</body>
+</html>
